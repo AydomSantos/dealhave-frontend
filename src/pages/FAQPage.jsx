@@ -1,4 +1,5 @@
 import React from "react";
+import FormDrop from "../components/forms/formDropdow";
 
 const faqPage = () => {
     return (
@@ -14,6 +15,7 @@ const faqPage = () => {
                     <p>My favorite color is blue.</p>
                 </li>
             </ul>
+            <FormDrop/>
         </div>
     );
 }

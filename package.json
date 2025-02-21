@@ -12,6 +12,10 @@
     "bootstrap": "^5.3.3",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
+<<<<<<< HEAD
+    "react-bootstrap": "^2.10.9",
+=======
+>>>>>>> d3b8f6454ebff7f3a44552bf7ae7a69a4dd4544c
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
     "react-redux": "^8.0.5",

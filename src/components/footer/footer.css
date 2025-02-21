@@ -1,0 +1,211 @@
+:root {
+    --max-width: 1200px;
+    --primary-color: #1875e8;
+    --secondary-color: #01080e;
+    --light-gray: #f7f7f7;
+    --white: #fff;
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 4rem 0 2rem;
+    margin-top: auto;
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .footer__content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+  }
+  
+  .footer__section {
+    margin-bottom: 2rem;
+  }
+  
+  .footer__title {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+  
+  .footer__title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary-color);
+  }
+  
+  .footer__links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .footer__link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: fit-content;
+  }
+  
+  .footer__link:hover {
+    color: var(--white);
+    transform: translateX(5px);
+  }
+  
+  .footer__link svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+  
+  .footer__contact {
+    font-style: normal;
+  }
+  
+  .footer__contact p {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .footer__social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .footer__social-link {
+    color: var(--white);
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .footer__social-link:hover {
+    color: var(--white);
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+    text-decoration: none;
+  }
+  
+  .footer__social-link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .footer__social-link:hover::after {
+    transform: scale(2);
+    opacity: 0;
+  }
+  
+  .footer__bottom {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .footer__copy {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+  }
+  
+  .back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    border: none;
+    outline: none;
+  }
+  
+  .back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .back-to-top:hover {
+    transform: translateY(-3px);
+    background-color: var(--primary-color-dark);
+  }
+
+  
+  @media (max-width: 768px) {
+    .footer__content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 0 1rem;
+      }
+      
+      .footer__title {
+        font-size: 1.1rem;
+      }
+      
+      .back-to-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 40px;
+        height: 40px;
+      }
+      
+      .footer__social-link {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+      }
+  }

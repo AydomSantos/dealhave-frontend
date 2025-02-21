@@ -1,0 +1,133 @@
+
+
+:root {
+    --max-width: 1200px;
+    --primary-color: #1875e8;
+    --secondary-color: #01080e;
+    --light-gray: #f7f7f7;
+    --white: #fff;
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+
+
+
+
+header{
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to right,  #2099f1, #133b76);
+    color: white;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--shadow);
+}
+
+nav{
+    flex: 1;
+    display: flex;
+    margin-left: 3rem;
+}
+
+nav a{
+    color: #ffff;
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+.nav__btn--login{
+    background: #ffff;
+    width: 138.81px;
+    margin-right: 1rem;
+}
+
+.nav__btn--register{
+    background: #000;
+    color: white;
+    width: 180.75px;
+}
+
+.nav__btn--register:hover{
+    color: #1875e8;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      padding: 1rem 0.5rem;
+      gap: 1rem;
+    }
+  
+    nav {
+      flex-direction: column;
+      align-items: center;
+      margin-left: 0;
+      width: 100%;
+      gap: 0.5rem;
+    }
+  
+    nav a {
+      margin-right: 0;
+      padding: 0.5rem;
+      text-align: center;
+      width: 100%;
+    }
+  
+    .nav__btn--login,
+    .nav__btn--register {
+      width: 100%;
+      margin-right: 0;
+      padding: 0.75rem;
+    }
+  
+    .buttons_container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    :root {
+      --border-radius: 8px;
+    }
+  
+    nav {
+      margin-left: 0;
+    }
+  
+    nav a {
+      font-size: 0.9rem;
+    }
+  
+    .nav__btn--login,
+    .nav__btn--register {
+      font-size: 0.85rem;
+      padding: 0.6rem;
+    }
+  }
+
+  
+@media (max-width: 480px) {
+    :root {
+      --border-radius: 8px;
+    }
+  
+    nav {
+      margin-left: 0;
+    }
+  
+    nav a {
+      font-size: 0.9rem;
+    }
+  
+    .nav__btn--login,
+    .nav__btn--register {
+      font-size: 0.85rem;
+      padding: 0.6rem;
+    }
+  }

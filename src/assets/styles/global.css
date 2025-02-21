@@ -1,0 +1,13 @@
+/* Reset de Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo do Body */
+  body {
+    background-color: var(--white);
+    font-family: "Inter", sans-serif;
+    min-height: 260vh;
+  }
