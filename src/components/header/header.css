@@ -41,12 +41,14 @@ nav a{
     background: #ffff;
     width: 138.81px;
     margin-right: 1rem;
+    box-shadow: var(--shadow);
 }
 
 .nav__btn--register{
     background: #000;
     color: white;
     width: 180.75px;
+    box-shadow: var(--shadow);
 }
 
 .nav__btn--register:hover{
