@@ -31,6 +31,11 @@ const Footer = () => {
                   FAQ
                 </a>
               </li>
+              <li>
+              <a href="/avaliacao" className="footer__link">
+                  Avaliações
+                </a>
+              </li>
             </ul>
           </nav>
         </div>

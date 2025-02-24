@@ -7,7 +7,7 @@
   
   /* Estilo do Body */
   body {
-    background-color: var(--white);
+    background-color: #F5F1F1;
     font-family: "Inter", sans-serif;
     min-height: 260vh;
   }
