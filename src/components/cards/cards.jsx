@@ -2,6 +2,8 @@ import React from "react";
 import { BsStarFill, BsClock, BsCart } from "react-icons/bs";
 import "./cards.css";
 
+import PaymentButton from "../carrinho/PaymentButton";
+
 import cardImg from "./img/img.jpg";
 
 const Card = () => {
@@ -33,7 +35,9 @@ const Card = () => {
               <span>1900</span>
             </div>
           </div>
+          
         </div>
+        <PaymentButton/>
       </div>
     </div>
   );

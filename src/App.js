@@ -5,8 +5,9 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import FAQPage from "./pages/FAQPage";
 import CategoriasPage from "./pages/CategoriasPage";
+import PaymentCallback from "./pages/PaymentCallbackPage";
 
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import "./assets/styles/global.css";
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/categorias" element={<CategoriasPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/payment-callback" element={<PaymentCallback/>}></Route>
       </Routes>
     </div>
   );
