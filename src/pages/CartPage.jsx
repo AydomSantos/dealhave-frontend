@@ -1,12 +1,28 @@
-import React from "react";
+import { useEffect, useState } from 'react';
+import PaymentBrick from '../components/carrinho/PaymentBrick';
+import CartSummary from '../components/carrinho/CarrinhoSummary';
 
-const cartPage = () => {
-    return (
-        <div>
-            <h1>Cart Page</h1>
-            <p>This is the cart page where you can see your purchased items.</p>
-        </div>
-    );
-}
+const CartPage = () => {
+  const [cartItems, setCartItems] = useState([]);
 
-export default cartPage;
+  useEffect(() => {
+    // Buscar itens do carrinho do localStorage ou API
+    const items = JSON.parse(localStorage.getItem('cart')) || [];
+    setCartItems(items);
+  }, []);
+
+  return (
+    <div className="cart-container">
+      <h2>Seu Carrinho</h2>
+      <CartSummary items={cartItems} />
+      
+      {cartItems.length > 0 ? (
+        <PaymentBrick cartItems={cartItems} />
+      ) : (
+        <p>Seu carrinho está vazio</p>
+      )}
+    </div>
+  );
+};
+
+export default CartPage;

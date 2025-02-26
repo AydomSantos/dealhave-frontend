@@ -1,7 +1,9 @@
+// Verifique se o caminho do hook está correto
 import { useMercadoPago } from '../../hooks/useMercadoPago';
 
-const PaymentButton = ({ cartItems }) => {
+const PaymentButton = ({ cartItems = [] }) => {
   const { handlePayment } = useMercadoPago();
+
   return (
     <button 
       onClick={() => handlePayment(cartItems)}
@@ -12,4 +14,4 @@ const PaymentButton = ({ cartItems }) => {
   );
 };
 
-export default PaymentButton;
+export default PaymentButton; 

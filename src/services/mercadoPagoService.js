@@ -1,21 +1,17 @@
 import { MercadoPagoConfig, Preference } from 'mercadopago';
 
-// Configuração inicial
-const configureMercadoPago = (accessToken) => {
-  return new MercadoPagoConfig({
-    accessToken: accessToken || process.env.VITE_MERCADO_PAGO_ACCESS_TOKEN
-  });
-};
+const client = new MercadoPagoConfig({
+  accessToken: import.meta.env.VITE_MERCADO_PAGO_ACCESS_TOKEN
+});
 
-// Criar preferência de pagamento
-export const createPaymentPreference = async (items, config) => {
-  const client = new MercadoPagoConfig(config);
-  const preference = new Preference(client);
-  
+// Exportação CORRETA da função
+export const createPaymentPreference = async (items) => {
   try {
+    const preference = new Preference(client);
     return await preference.create({
       body: {
         items,
+        purpose: 'wallet_purchase',
         back_urls: {
           success: `${import.meta.env.VITE_BASE_URL}/payment-callback`,
           failure: `${import.meta.env.VITE_BASE_URL}/payment-callback`,
@@ -25,6 +21,6 @@ export const createPaymentPreference = async (items, config) => {
       }
     });
   } catch (error) {
-    throw new Error('Erro ao criar preferência de pagamento: ' + error.message);
+    throw new Error('Erro ao criar preferência: ' + error.message);
   }
 };

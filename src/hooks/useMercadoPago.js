@@ -1,6 +1,4 @@
-// onde e aplicada a logica 
-
-import { createPaymentPreference } from '../services/mercadoPagoService';
+import { createPaymentPreference } from '../services/mercadoPagoService'; 
 
 export const useMercadoPago = () => {
   const handlePayment = async (items) => {
@@ -16,6 +14,7 @@ export const useMercadoPago = () => {
       window.location.href = preference.init_point;
     } catch (error) {
       console.error('Erro no pagamento:', error);
+      throw error;
     }
   };
 
