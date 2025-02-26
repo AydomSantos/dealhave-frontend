@@ -1,14 +1,14 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import { BsStarFill, BsClock, BsCart } from "react-icons/bs";
 import "./cards.css";
-
-import PaymentButton from "../carrinho/PaymentButton";
-
 import cardImg from "./img/img.jpg";
 
 const Card = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="card__container">
+    <div className="card__container" onClick={() => navigate('/payment')}>
       <div className="card__box">
         <div className="card__box--img">
           <img src={cardImg} alt="imagem do produto" />
@@ -35,9 +35,7 @@ const Card = () => {
               <span>1900</span>
             </div>
           </div>
-          
         </div>
-        <PaymentButton/>
       </div>
     </div>
   );
