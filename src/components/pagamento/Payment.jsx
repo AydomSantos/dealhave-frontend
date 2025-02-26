@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Payment, initMercadoPago } from '@mercadopago/sdk-react';
 
 
-
 const MP_CONFIG = {
   PUBLIC_KEY:    'TEST-7de81d0f-6a49-4181-9115-6eab1b2015b4',
-  ACCESS_TOKEN:  ''
+  ACCESS_TOKEN:  'TEST-2916100788662548-022516-ccd3d61dffeee2fc2d61f60f2ed80ad7-1309959741'
 };
 
 const PaymentBrick = () => {
