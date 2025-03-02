@@ -1,70 +1,151 @@
-# Getting Started with Create React App
+# Sistema Integrado de Pagamento PIX 🚀
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Integração frontend-backend para processamento de pagamentos via PIX utilizando Mercado Pago. Oferece interface amigável com QR Code e gestão completa do fluxo de pagamento.
 
-## Available Scripts
+![Fluxo de Pagamento](https://example.com/path-to-payment-flow-diagram.png) <!-- Adicione uma imagem ilustrativa se disponível -->
 
-In the project directory, you can run:
+## Pré-requisitos 📋
 
-### `npm start`
+**Backend**
+- Node.js v16+
+- Conta de desenvolvedor no [Mercado Pago](https://www.mercadopago.com.br/)
+- Token de acesso (Sandbox ou Produção)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Frontend**
+- React 17+
+- NPM/Yarn
+- Conexão com backend rodando
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Configuração Rápida ⚡
 
-### `npm test`
+### Backend
+1. Instale as dependências:
+```bash
+npm install express cors dotenv mercadopago
+Crie o arquivo .env:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+env
+Copy
+MP_ACCESS_TOKEN=SEU_ACCESS_TOKEN_AQUI
+PORT=3333
+Inicie o servidor:
 
-### `npm run build`
+bash
+Copy
+node app.js
+Frontend
+Configure o ambiente:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+env
+Copy
+REACT_APP_API_URL=http://localhost:3333
+Instale dependências e inicie:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+bash
+Copy
+npm install
+npm start
+Componente de Pagamento 💎
+Implementação
+jsx
+Copy
+import PaymentBrick from './components/pagamento/Payment';
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<PaymentBrick 
+  productData={{
+    title: "Smartphone Premium",
+    unit_price: 2499.99,
+    quantity: 1
+  }}
+/>
+Propriedades
+Parâmetro	Tipo	Descrição	Exemplo
+title	string	Nome do produto	"Notebook Gamer"
+unit_price	number	Preço unitário	1500.00
+quantity	number	Quantidade	2
+Arquitetura do Sistema 🏗️
+mermaid
+Copy
+graph TD
+  A[Frontend] -->|Envia dados| B(Backend)
+  B -->|Processa pagamento| C[Mercado Pago]
+  C -->|Retorna QR Code| B
+  B -->|Exibe dados| A
+Funcionalidades Principais ✨
+✅ Geração dinâmica de QR Codes PIX
 
-### `npm run eject`
+✅ Visualização de comprovante de pagamento
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+✅ Copiar código PIX com um clique
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+✅ Exibição em tempo real do status
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+✅ Tratamento de erros detalhado
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+✅ Interface responsiva
 
-## Learn More
+Fluxo Completo 🔄
+Usuário seleciona produto
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Frontend coleta dados do pedido
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Backend cria preferência no MP
 
-### Code Splitting
+Sistema exibe QR Code e opções
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Mercado Pago processa pagamento
 
-### Analyzing the Bundle Size
+Status atualizado via Webhook (a implementar)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Webhooks e Produção 🛠️
+Para ambiente de produção:
 
-### Making a Progressive Web App
+javascript
+Copy
+// Adicione no backend (app.js)
+app.post('/payment-webhook', async (req, res) => {
+  // Implementar lógica de atualização de status
+});
+Configurações obrigatórias:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+URLs de notificação no painel do Mercado Pago
 
-### Advanced Configuration
+Autenticação de requisições
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Certificado SSL para HTTPS
 
-### Deployment
+Testando o Sistema 🧪
+Use credenciais Sandbox
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Simule pagamentos com:
 
-### `npm run build` fails to minify
+Email: test_user_123456@testuser.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+CPF: 123.456.789-09
+
+Verifique notificações no painel MP
+
+Segurança 🔒
+Recomendações essenciais:
+
+bash
+Copy
+# Backend
+npm install helmet rate-limiter
+
+# Frontend
+npm install crypto-js
+Validar todos os dados de entrada
+
+Implementar CORS restritivo
+
+Usar variáveis de ambiente para credenciais
+
+Atualizar dependências regularmente
+
+Roadmap 🗺️
+Versão	Novos Recursos
+1.1	Webhooks para atualização de status
+1.2	Suporte a múltiplos métodos de pagamento
+2.0	Painel administrativo de transações
+S
