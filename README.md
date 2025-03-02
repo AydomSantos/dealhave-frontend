@@ -22,30 +22,25 @@
 Crie o arquivo .env:
 
 env
-Copy
 MP_ACCESS_TOKEN=SEU_ACCESS_TOKEN_AQUI
 PORT=<span class="hljs-number">3333</span>
 Inicie o servidor:
 
 bash
-Copy
 node app.js
 Frontend
 Configure o ambiente:
 
 env
-Copy
 REACT_APP_API_URL=http://localhost:<span class="hljs-number">3333</span>
 Instale dependências e inicie:
 
 bash
-Copy
 npm install
 npm start
 Componente de Pagamento 💎
 Implementação
 jsx
-Copy
 import PaymentBrick from <span class="hljs-string">'./components/pagamento/Payment'</span>;
 
 &lt;PaymentBrick 
@@ -62,7 +57,6 @@ unit_price  number  Preço unitário  <span class="hljs-number">1500.00</span>
 quantity    number  Quantidade  <span class="hljs-number">2</span>
 Arquitetura <span class="hljs-keyword">do</span> Sistema 🏗️
 mermaid
-Copy
 graph TD
   A[Frontend] --&gt;|Envia dados| B(Backend)
   B --&gt;|Processa pagamento| C[Mercado Pago]
@@ -98,7 +92,6 @@ Webhooks e Produção 🛠️
 Para ambiente de produção:
 
 javascript
-Copy
 // Adicione no backend (app.js)
 app.post(<span class="hljs-string">'/payment-webhook'</span>, async (req, res) =&gt; {
   // Implementar lógica de atualização de status
