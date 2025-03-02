@@ -6,7 +6,7 @@ import RegisterPage from "./pages/RegisterPage";
 import FAQPage from "./pages/FAQPage";
 import CategoriasPage from "./pages/CategoriasPage";
 import PaymentBrick from "./components/pagamento/Payment";
-import Wallet from "./components/pagamento/Wallet";
+
 
 import { Route, Routes } from "react-router-dom";
 
@@ -25,7 +25,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/payment" element={<PaymentBrick />} />
-        <Route path="/wallet" element={<Wallet/>}></Route>
+        
       </Routes>
       
     </div>
