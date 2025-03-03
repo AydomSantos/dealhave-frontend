@@ -1,0 +1,113 @@
+.payment-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.payment-loading {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-size: 16px;
+}
+
+.payment-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.payment-error button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.payment-error button:hover {
+  background-color: #c82333;
+}
+
+.payment-details {
+  text-align: center;
+}
+
+.payment-details h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.product-info {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.product-info p {
+  margin: 8px 0;
+  color: #555;
+}
+
+.qr-code-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.qr-code-image {
+  max-width: 200px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.copy-button, .ticket-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  display: inline-block;
+  margin: 5px;
+}
+
+.copy-button:hover, .ticket-button:hover {
+  background-color: #0056b3;
+}
+
+.payment-status {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+}
+
+.payment-id {
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.ticket-info {
+  margin-top: 15px;
+} 

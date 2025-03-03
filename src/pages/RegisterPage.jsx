@@ -1,22 +1,11 @@
 import React from "react";
+import FormRegister from "../components/forms/formRegister/form_register";
+import "../../src/assets/styles/register_page/style.css"
 
 const registerPage = () => {
     return (
-        <div>
-            <h1>Register</h1>
-            <form>
-                <label>
-                    Username:
-                    <input type="text" name="username" />
-                </label>
-                <br />
-                <label>
-                    Password:
-                    <input type="password" name="password" />
-                </label>
-                <br />
-                <input type="submit" value="Register" />
-            </form>
+        <div className="register-page">
+            <FormRegister/>
         </div>
     );
 }

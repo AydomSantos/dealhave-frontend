@@ -6,7 +6,7 @@ import RegisterPage from "./pages/RegisterPage";
 import FAQPage from "./pages/FAQPage";
 import CategoriasPage from "./pages/CategoriasPage";
 import PaymentBrick from "./components/pagamento/Payment";
-
+import ForgotPasswordForm from "./components/forms/formForgotPassword/form_forgot_password";
 
 import { Route, Routes } from "react-router-dom";
 
@@ -24,6 +24,7 @@ function App() {
         <Route path="/categorias" element={<CategoriasPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordForm/>}/>
         <Route path="/payment" element={<PaymentBrick />} />
         
       </Routes>

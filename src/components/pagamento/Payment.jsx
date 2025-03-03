@@ -4,7 +4,7 @@ import './Payment.css';
 
 const PaymentBrick = ({ productData = {
   title: "Produto Teste",
-  unit_price: 100,
+  unit_price: 1,
   quantity: 1
 } }) => {
   const [loading, setLoading] = useState(true);
@@ -19,10 +19,10 @@ const PaymentBrick = ({ productData = {
       } catch (err) {
         setError(err.message);
         console.error('Erro na inicialização:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
+    } finally {
+      setLoading(false);
+    }
+  };
 
     initializePayment();
   }, [productData]);
@@ -63,7 +63,7 @@ const PaymentBrick = ({ productData = {
                     alt="QR Code PIX"
                     className="qr-code-image"
                   />
-                  <button 
+          <button 
                     className="copy-button"
                     onClick={() => {
                       navigator.clipboard.writeText(paymentInfo.qr_code);
@@ -71,7 +71,7 @@ const PaymentBrick = ({ productData = {
                     }}
                   >
                     Copiar código PIX
-                  </button>
+          </button>
                 </>
               )}
             </div>
@@ -86,9 +86,9 @@ const PaymentBrick = ({ productData = {
                 >
                   Ver comprovante
                 </a>
-              </div>
-            )}
-            
+        </div>
+      )}
+
             <div className="payment-status">
               <p><strong>Status do pagamento:</strong> {paymentInfo.status}</p>
               <p className="payment-id">ID do pagamento: {paymentInfo.id}</p>

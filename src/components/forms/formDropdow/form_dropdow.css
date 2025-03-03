@@ -1,0 +1,85 @@
+.faq-container {
+    max-width: 864px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 3rem;
+}
+
+.faq-title {
+    color: #0099FF;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.faq-subtitle {
+    color: #666;
+    margin-bottom: 24px;
+}
+
+.faq-accordion {
+    border: 1px solid #E5E5E5;
+    border-radius: 8px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-button {
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+}
+
+.plus-icon {
+    font-size: 20px;
+    color: #0099FF;
+}
+
+.faq-content {
+    padding: 0 16px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    background-color: #F8F9FA;
+    color: #666;
+    line-height: 1.5;
+}
+
+.faq-content.active {
+    padding: 16px;
+    max-height: 500px;
+}
+
+.faq-button.active {
+    background-color: #F8F9FA;
+}
+
+.faq-button.active .plus-icon {
+    transform: rotate(180deg);
+}
+
+.plus-icon {
+    transition: transform 0.3s ease;
+}
+
+/* Add these new styles at the end of the file */
+.faq-button:focus {
+    outline: none;
+}
+
+.faq-item:hover {
+    background-color: #f8f9fa;
+}
