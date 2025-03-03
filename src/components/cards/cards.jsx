@@ -7,8 +7,25 @@ import cardImg from "./img/img.jpg";
 const Card = () => {
   const navigate = useNavigate();
 
+  const handleClick = () => {
+    const productData = {
+      id: 1,
+      name: "Galaxy S8",
+      image: cardImg,
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit...",
+      rating: "5,00",
+      deliveryTime: "2 d",
+      sales: "1900",
+      category: "Publicidade / Vídeo Promocional"
+    };
+
+    navigate('/compra', { 
+      state: productData
+    });
+  };
+
   return (
-    <div className="card__container" onClick={() => navigate('/payment')}>
+    <div className="card__container" onClick={handleClick}>
       <div className="card__box">
         <div className="card__box--img">
           <img src={cardImg} alt="imagem do produto" />

@@ -1,0 +1,261 @@
+/* ==========================================================================
+   VARIÁVEIS GLOBAIS
+   ========================================================================== */
+   :root {
+    /* Cores */
+    --primary-color: #00e676;
+    --primary-hover: #00c853;
+    --secondary-color: #1875e8;
+    --secondary-hover: #1565c0;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --border-color: #e0e0e0;
+    --bg-hover: #f5f5f5;
+    
+    /* Espaçamentos */
+    --spacing-unit: 1rem;
+    --radius-base: 8px;
+    
+    /* Tipografia */
+    --font-base: 0.95rem;
+    --font-small: 0.9rem;
+    --font-large: 1.4rem;
+  }
+  
+  /* ==========================================================================
+     ELEMENTOS BASE
+     ========================================================================== */
+  .product-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--radius-base);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    max-width: 500px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+  
+  label {
+    margin: 0 1rem;
+    font-size: var(--font-small);
+    color: var(--text-primary);
+  }
+  
+  input,
+  select,
+  button {
+    font-family: inherit;
+    outline: none;
+    transition: all 0.15s ease-in-out;
+  }
+  
+  /* ==========================================================================
+     SEÇÃO DE SERVIÇOS
+     ========================================================================== */
+  .service-section h2 {
+    font-size: var(--font-large);
+    margin: 0 0 1.5rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  
+  .delivery-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-unit);
+    margin-bottom: 1.5rem;
+    font-size: var(--font-base);
+    
+    .delivery-icon {
+      margin-right: 0.5rem;
+      position: relative;
+      bottom: 0.1rem;
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  .service-description {
+    margin: 0 0 2rem;
+    font-size: var(--font-base);
+    line-height: 1.7;
+  }
+  
+  /* ==========================================================================
+     CONTROLE DE QUANTIDADE
+     ========================================================================== */
+  .quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 2.5rem;
+  
+    button {
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid var(--border-color);
+      background: white;
+      border-radius: calc(var(--radius-base) - 2px);
+      font-size: 1.1rem;
+      cursor: pointer;
+      
+      &:hover {
+        background: var(--bg-hover);
+        transform: scale(1.05);
+      }
+    }
+  
+    input {
+      width: 60px;
+      padding: 0.5rem;
+      text-align: center;
+      border: 1.5px solid var(--border-color);
+      border-radius: calc(var(--radius-base) - 2px);
+      
+      &:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 2px rgba(0,230,118,0.1);
+      }
+    }
+  }
+  
+  /* ==========================================================================
+     ITENS ADICIONAIS
+     ========================================================================== */
+  .additionals-section {
+    border-top: 1.5px solid #f0f0f0;
+    padding: 2rem 0 0;
+    margin: 0 0 2.5rem;
+  }
+  
+  .additional-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  .additional-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: var(--font-small);
+    
+    select {
+      margin-left: auto;
+      padding: 0.5rem 1rem;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-base);
+      background: white;
+      cursor: pointer;
+      
+      &:hover {
+        border-color: var(--primary-color);
+      }
+    }
+  }
+  
+  /* ==========================================================================
+     BOTÕES
+     ========================================================================== */
+  .purchase-button,
+  .project-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1.2rem;
+    border: none;
+    border-radius: var(--radius-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+  }
+  
+  .purchase-button {
+    background: var(--primary-color);
+    color: white;
+    margin: var(--spacing-unit) 0;
+  
+    &:hover {
+      background: var(--primary-hover);
+    }
+  }
+  
+  .project-button {
+    background: var(--secondary-color);
+    font-size: var(--font-base);
+    
+    &:hover {
+      background: var(--secondary-hover);
+    }
+  }
+  
+  /* ==========================================================================
+     SEÇÃO DE GARANTIA
+     ========================================================================== */
+  .guarantee-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin: 0 0 2.5rem;
+  
+    a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      
+      &:hover {
+        border-bottom-color: currentColor;
+      }
+    }
+  }
+  
+  /* ==========================================================================
+     RESPONSIVIDADE
+     ========================================================================== */
+  @media (max-width: 576px) {
+    .product-form {
+      padding: 1.5rem;
+      border-radius: calc(var(--radius-base) - 2px);
+    }
+  
+    .additional-item {
+      flex-wrap: wrap;
+      
+      select {
+        width: 100%;
+        margin-top: 0.5rem;
+      }
+    }
+  
+    .service-section h2 {
+      font-size: 1.2rem;
+    }
+  
+    .delivery-info {
+      flex-wrap: wrap;
+      row-gap: 1rem;
+    }
+  }
+  
+  /* ==========================================================================
+     ELEMENTOS ESPECIAIS
+     ========================================================================== */
+  .special-requirements {
+    text-align: center;
+    border-top: 1.5px solid #f0f0f0;
+    padding: 2rem 0 0;
+    
+    p {
+      margin-bottom: 1.5rem;
+    }
+  }
