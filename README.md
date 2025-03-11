@@ -1,151 +1,81 @@
-# Sistema Integrado de Pagamento PIX 🚀
+# DealHave Frontend
 
-Integração frontend-backend para processamento de pagamentos via PIX utilizando Mercado Pago. Oferece interface amigável com QR Code e gestão completa do fluxo de pagamento.
+## Sobre o Projeto
+DealHave é uma aplicação web desenvolvida em React que oferece uma interface moderna e responsiva para um sistema de e-commerce, integrando com o Mercado Pago para processamento de pagamentos.
 
-![Fluxo de Pagamento](https://example.com/path-to-payment-flow-diagram.png) <!-- Adicione uma imagem ilustrativa se disponível -->
+## Tecnologias Utilizadas
+- React 18.2.0
+- React Router DOM 7.2.0
+- Redux Toolkit e React Redux para gerenciamento de estado
+- Bootstrap 5.3.3 e React Bootstrap para estilização
+- Axios 1.6.8 para requisições HTTP
+- MercadoPago SDK para integração de pagamentos
+- React Toastify para notificações
+- Yup para validação de formulários
 
-## Pré-requisitos 📋
+## Pré-requisitos
+- Node.js (versão LTS recomendada)
+- NPM ou Yarn
 
-**Backend**
-- Node.js v16+
-- Conta de desenvolvedor no [Mercado Pago](https://www.mercadopago.com.br/)
-- Token de acesso (Sandbox ou Produção)
+## Instalação
 
-**Frontend**
-- React 17+
-- NPM/Yarn
-- Conexão com backend rodando
-
-## Configuração Rápida ⚡
-
-### Backend
-1. Instale as dependências:
+1. Clone o repositório:
 ```bash
-npm install express cors dotenv mercadopago
-Crie o arquivo .env:
+git clone [URL_DO_REPOSITÓRIO]
+```
 
-env
-Copy
-MP_ACCESS_TOKEN=SEU_ACCESS_TOKEN_AQUI
-PORT=3333
-Inicie o servidor:
-
-bash
-Copy
-node app.js
-Frontend
-Configure o ambiente:
-
-env
-Copy
-REACT_APP_API_URL=http://localhost:3333
-Instale dependências e inicie:
-
-bash
-Copy
+2. Instale as dependências:
+```bash
 npm install
+```
+
+3. Configure as variáveis de ambiente:
+Crie um arquivo `.env` na raiz do projeto e configure as variáveis necessárias.
+
+## Executando o Projeto
+
+Para iniciar o servidor de desenvolvimento:
+```bash
 npm start
-Componente de Pagamento 💎
-Implementação
-jsx
-Copy
-import PaymentBrick from './components/pagamento/Payment';
+```
 
-<PaymentBrick 
-  productData={{
-    title: "Smartphone Premium",
-    unit_price: 2499.99,
-    quantity: 1
-  }}
-/>
-Propriedades
-Parâmetro	Tipo	Descrição	Exemplo
-title	string	Nome do produto	"Notebook Gamer"
-unit_price	number	Preço unitário	1500.00
-quantity	number	Quantidade	2
-Arquitetura do Sistema 🏗️
-mermaid
-Copy
-graph TD
-  A[Frontend] -->|Envia dados| B(Backend)
-  B -->|Processa pagamento| C[Mercado Pago]
-  C -->|Retorna QR Code| B
-  B -->|Exibe dados| A
-Funcionalidades Principais ✨
-✅ Geração dinâmica de QR Codes PIX
+O aplicativo estará disponível em `http://localhost:3000`
 
-✅ Visualização de comprovante de pagamento
+## Scripts Disponíveis
 
-✅ Copiar código PIX com um clique
+- `npm start`: Inicia o servidor de desenvolvimento
+- `npm build`: Cria a versão de produção
+- `npm test`: Executa os testes
+- `npm eject`: Ejeta as configurações do Create React App
 
-✅ Exibição em tempo real do status
+## Estrutura do Projeto
 
-✅ Tratamento de erros detalhado
+```
+dealhave-frontend/
+├── public/           # Arquivos públicos
+├── src/              # Código fonte
+├── .gitignore        # Arquivos ignorados pelo git
+├── package.json      # Dependências e scripts
+└── README.md         # Este arquivo
+```
 
-✅ Interface responsiva
+## Recursos e Funcionalidades
 
-Fluxo Completo 🔄
-Usuário seleciona produto
+- Integração com Mercado Pago para processamento de pagamentos
+- Sistema de roteamento com React Router
+- Gerenciamento de estado global com Redux
+- Interface responsiva com Bootstrap
+- Sistema de notificações com React Toastify
+- Validação de formulários com Yup
 
-Frontend coleta dados do pedido
+## Contribuição
 
-Backend cria preferência no MP
+1. Faça um Fork do projeto
+2. Crie uma Branch para sua Feature (`git checkout -b feature/AmazingFeature`)
+3. Faça o Commit de suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Faça o Push para a Branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
 
-Sistema exibe QR Code e opções
+## Licença
 
-Mercado Pago processa pagamento
-
-Status atualizado via Webhook (a implementar)
-
-Webhooks e Produção 🛠️
-Para ambiente de produção:
-
-javascript
-Copy
-// Adicione no backend (app.js)
-app.post('/payment-webhook', async (req, res) => {
-  // Implementar lógica de atualização de status
-});
-Configurações obrigatórias:
-
-URLs de notificação no painel do Mercado Pago
-
-Autenticação de requisições
-
-Certificado SSL para HTTPS
-
-Testando o Sistema 🧪
-Use credenciais Sandbox
-
-Simule pagamentos com:
-
-Email: test_user_123456@testuser.com
-
-CPF: 123.456.789-09
-
-Verifique notificações no painel MP
-
-Segurança 🔒
-Recomendações essenciais:
-
-bash
-Copy
-# Backend
-npm install helmet rate-limiter
-
-# Frontend
-npm install crypto-js
-Validar todos os dados de entrada
-
-Implementar CORS restritivo
-
-Usar variáveis de ambiente para credenciais
-
-Atualizar dependências regularmente
-
-Roadmap 🗺️
-Versão	Novos Recursos
-1.1	Webhooks para atualização de status
-1.2	Suporte a múltiplos métodos de pagamento
-2.0	Painel administrativo de transações
-S
+Este projeto está sob a licença [MIT](https://choosealicense.com/licenses/mit/)

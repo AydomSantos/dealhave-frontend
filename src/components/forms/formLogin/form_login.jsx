@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./form_login.css";
-import imgLogin from "../../../assets/images/Logo/Logo.png";
+import imgLogin from "../../../assets/images/Logo/logo_nova.png";
 
 const FormLogin = () => {
     const [formData, setFormData] = useState({
@@ -67,8 +67,8 @@ const FormLogin = () => {
                     <button type="submit" className="login-button">
                         Login
                     </button>
-                    <button type="button" className="continue-button">
-                        Continue
+                    <button type="button" className="continue-button btn-register">
+                        Register
                     </button>
                 </form>
             </div>
