@@ -73,8 +73,8 @@
       margin-right: 0.5rem;
       position: relative;
       bottom: 0.1rem;
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 16px;
     }
   }
   
@@ -130,11 +130,33 @@
     padding: 2rem 0 0;
     margin: 0 0 2.5rem;
   }
+
+  .additionals-section h3{
+    font-size: var(--font-large);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .quantity-section-label{
+    color: var(--text-secondary);
+    margin: 0.8rem 0;
+    font-size: 1.2rem;
+
+  }
   
   .additional-items {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1rem;
+  }
+
+  .additional-items .additional-item-header{
+    display: flex;
+    align-items: center;
+  }
+
+  .additional-item label{
+    font-size: 0.8rem;
   }
   
   .additional-item {
@@ -155,6 +177,10 @@
         border-color: var(--primary-color);
       }
     }
+  }
+
+  .subtotal{
+    margin: 0.8rem 0;
   }
   
   /* ==========================================================================
@@ -192,6 +218,7 @@
   .project-button {
     background: var(--secondary-color);
     font-size: var(--font-base);
+  
     
     &:hover {
       background: var(--secondary-hover);

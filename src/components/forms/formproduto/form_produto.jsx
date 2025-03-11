@@ -80,7 +80,7 @@ const FormProduto = ({ productData }) => {
                     <span className="price-info">R$ {basePrice.toFixed(2)}</span>
                 </div>
                 <div className="quantity-section">
-                    <label>Quantidade:</label>
+                    <label className="quantity-section-label">Quantidade:</label>
                     <div className="quantity-control">
                         <button onClick={() => handleQuantityChange('decrease')}>-</button>
                         <input type="number" value={quantity} readOnly />
