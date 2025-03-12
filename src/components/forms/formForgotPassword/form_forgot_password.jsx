@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../../assets/styles/forgot_password/style.css";
 import "../formForgotPassword/form_forgot_password.css";
-import imgForgot from "../../../assets/images/Logo/Logo.png";
+import imgForgot from "../../../assets/images/Logo/logo_nova.png";
 
 const ForgotPasswordForm = () => {
   const [email, setEmail] = useState("");

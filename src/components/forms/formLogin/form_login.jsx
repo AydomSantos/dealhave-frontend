@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./form_login.css";
 import imgLogin from "../../../assets/images/Logo/logo_nova.png";
+import { Link } from "react-router-dom";
 
 const FormLogin = () => {
     const [formData, setFormData] = useState({
@@ -60,9 +61,9 @@ const FormLogin = () => {
                             />
                             Lembrar de mim
                         </label>
-                        <a href="/forgot-password" className="forgot-password">
+                        <Link to="/forgot-password" className="forgot-password">
                             Esqueceu sua senha?
-                        </a>
+                        </Link>
                     </div>
                     <button type="submit" className="login-button">
                         Login
