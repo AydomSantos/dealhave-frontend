@@ -1,0 +1,27 @@
+.rating-container {
+    display: inline-flex;
+    gap: 4px;
+}
+
+.star {
+    font-size: 24px;
+    cursor: pointer;
+    color: #ddd;
+    transition: color 0.2s ease-in-out;
+}
+
+.star.filled {
+    color: #ffd700;
+}
+
+.star.readonly {
+    cursor: default;
+}
+
+.star:hover {
+    transform: scale(1.1);
+}
+
+.star.readonly:hover {
+    transform: none;
+}

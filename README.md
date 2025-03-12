@@ -12,6 +12,9 @@ DealHave é uma aplicação web desenvolvida em React que oferece uma interface 
 - MercadoPago SDK para integração de pagamentos
 - React Toastify para notificações
 - Yup para validação de formulários
+- React Icons para ícones
+- React Rating Stars para avaliações
+- React Modal para modais interativos
 
 ## Pré-requisitos
 - Node.js (versão LTS recomendada)
@@ -54,6 +57,12 @@ O aplicativo estará disponível em `http://localhost:3000`
 dealhave-frontend/
 ├── public/           # Arquivos públicos
 ├── src/              # Código fonte
+│   ├── components/   # Componentes reutilizáveis
+│   ├── pages/        # Páginas da aplicação
+│   ├── services/     # Serviços e APIs
+│   ├── store/        # Configuração do Redux
+│   ├── styles/       # Estilos globais
+│   └── utils/        # Utilitários e helpers
 ├── .gitignore        # Arquivos ignorados pelo git
 ├── package.json      # Dependências e scripts
 └── README.md         # Este arquivo
@@ -67,6 +76,14 @@ dealhave-frontend/
 - Interface responsiva com Bootstrap
 - Sistema de notificações com React Toastify
 - Validação de formulários com Yup
+- Sistema de avaliações e comentários
+- Filtros avançados de produtos
+- Carrinho de compras persistente
+- Painel de administração
+- Sistema de busca em tempo real
+- Gerenciamento de perfil de usuário
+- Histórico de pedidos
+- Lista de desejos
 
 ## Contribuição
 
