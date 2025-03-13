@@ -1,9 +1,20 @@
 import "./header.css";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+import { logout } from '../../store/slices/userSlice';
 import logo from "./img/Logo.png";
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { isAuthenticated, user } = useSelector((state) => state.user);
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate('/');
+  };
+
   return (
     <header className="header">
       <Link to="/" className="header__logo">
@@ -27,12 +38,23 @@ const Header = () => {
       </nav>
 
       <div className="buttons_container">
-        <Link to="/login" className="nav__btn--login btn">
-          Login
-        </Link>
-        <Link to="/register" className="nav__btn--register btn">
-          Registrar
-        </Link>
+        {isAuthenticated ? (
+          <>
+            <span className="nav__user-name">Olá, {user?.name}</span>
+            <button onClick={handleLogout} className="nav__btn--login btn">
+              Sair
+            </button>
+          </>
+        ) : (
+          <>
+            <Link to="/login" className="nav__btn--login btn">
+              Login
+            </Link>
+            <Link to="/register" className="nav__btn--register btn">
+              Registrar
+            </Link>
+          </>
+        )}
       </div>
     </header>
   );

@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import "./form_login.css";
 import imgLogin from "../../../assets/images/Logo/logo_nova.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loginSuccess } from "../../../store/slices/userSlice";
 
 const FormLogin = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
-        email: '',
-        password: '',
+        email: 'test@example.com',
+        password: '123456',
         rememberMe: false
     });
 
@@ -20,8 +24,12 @@ const FormLogin = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle login logic here
-        console.log('Form submitted:', formData);
+        dispatch(loginSuccess({ 
+            name: 'Test User',
+            email: formData.email,
+            id: 1
+        }));
+        navigate('/home');
     };
 
     return (

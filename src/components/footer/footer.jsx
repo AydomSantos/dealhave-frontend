@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   BsEnvelopeFill,
   BsTelephoneFill,
@@ -12,16 +13,29 @@ import "./footer.css";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const isAuthenticated = localStorage.getItem('user') !== null;
 
   return (
     <footer className="footer" role="contentinfo">
       <div className="footer__content">
-        {/* Seção de Navegação */}
         <div className="footer__section">
           <h2 className="footer__title">Navegação</h2>
           <ul className="footer__links">
-            <li><a href="/categorias" className="footer__link">Categorias</a></li>
-            <li><a href="/faq" className="footer__link">FAQ</a></li>
+            <li>
+              <Link 
+                to={isAuthenticated ? "/auth/categorias" : "/categorias"} 
+                className="footer__link"
+              >
+                Categorias
+              </Link>
+            </li>
+            <li><Link to="/faq" className="footer__link">FAQ</Link></li>
+            {isAuthenticated && (
+              <>
+                <li><Link to="/profile/products" className="footer__link">Meus Produtos</Link></li>
+                <li><Link to="/profile/config" className="footer__link">Configurações</Link></li>
+              </>
+            )}
           </ul>
         </div>
 
@@ -66,7 +80,7 @@ const Footer = () => {
 
       <div className="footer__bottom">
         <p className="footer__copy">
-          &copy; {currentYear} Empresa. Todos os direitos reservados.
+          &copy; {currentYear} Deal Haven. Todos os direitos reservados.
         </p>
       </div>
     </footer>
