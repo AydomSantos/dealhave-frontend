@@ -6,7 +6,7 @@ import cardImg from "./img/img.jpg";
 
 const Card = () => {
   const navigate = useNavigate();
-
+  
   const handleClick = () => {
     const productData = {
       id: 1,
@@ -47,7 +47,7 @@ const Card = () => {
               <BsClock className="clock-icon" />
               <span>2 d</span>
             </div>
-            <div>
+            <div  style={{ cursor: 'pointer' }}>
               <BsCart className="cart-icon" />
               <span>1900</span>
             </div>

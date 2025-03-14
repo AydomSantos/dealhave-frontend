@@ -7,17 +7,19 @@ import PrivateRoute from "./components/PrivateRoute";
 import HomePage from "./pages/HomePage";
 import CategoriasPage from "./pages/CategoriasPage";
 import PaginaDeCompra from "./pages/PaginaDeCompra";
+import CartPage from './pages/cart/CartPage';
+
 
 // Auth related pages
-import LoginPage from "./pages/LoginPage";
-import RegisterPage from "./pages/RegisterPage";
-import PaginaReculperarSenha from "./pages/ReculperaSenha";
+import LoginPage from "./pages/auth/LoginPage";
+import RegisterPage from "./pages/auth/RegisterPage";
+import PaginaReculperarSenha from "./pages/auth/RecuperarSenha";
 
 // Authenticated pages
 import AuthHomePage from "./pages/authenticated/AuthHomePage";
 import ConfigProfile from "./pages/authenticated/ConfigProfile";
 import MyProducts from "./pages/authenticated/MyProducts";
-import AddProduct from "./pages/authenticated/AddProduct";
+import AddProduct from "./pages/products/AddProduct";
 import AuthCategoriasPage from "./pages/authenticated/AuthCategoriasPage";
 
 // Pagina de Avaliações 
@@ -42,6 +44,8 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forgot-password" element={<PaginaReculperarSenha/>} />
         <Route path="/faq" element={<FAQPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        
 
         {/* Protected routes */}
         <Route

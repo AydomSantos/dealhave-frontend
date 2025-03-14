@@ -19,7 +19,6 @@ const AuthHomePage = () => {
             <Cards/>
             <Cards/>
             <Cards/>
-            <Cards/>
           </div>
         </section>
         <section className="section">
@@ -28,7 +27,6 @@ const AuthHomePage = () => {
             <div className="barra"></div>
           </h2>
           <div className="section--container--card">
-            <Cards/>
             <Cards/>
             <Cards/>
             <Cards/>

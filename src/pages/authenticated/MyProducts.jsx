@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AuthHeader from '../../components/authHeader/AuthHeader';
 import { Link } from 'react-router-dom';
-import { BsBox, BsClock, BsCheckCircle, BsSearch, BsGear } from 'react-icons/bs';
+import { BsBox } from 'react-icons/bs';
 import './MyProducts.css';
 
 const MyProducts = () => {
