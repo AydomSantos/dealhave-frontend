@@ -1,13 +1,8 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
-import { BsInfoCircle,  BsClock } from "react-icons/bs";
+import React, { useState, useEffect } from "react";
+import { BsInfoCircle, BsShieldCheck, BsClock } from "react-icons/bs";
 import "./form_produto.css";
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../../../store/slices/cartSlice';
 
 const FormProduto = ({ productData }) => {
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
     const basePrice = 22.00;
     const [quantity, setQuantity] = useState(1);
     const [additionals, setAdditionals] = useState({
@@ -18,7 +13,7 @@ const FormProduto = ({ productData }) => {
     });
     const [totalPrice, setTotalPrice] = useState(basePrice);
 
-    const calculateTotal = useCallback(() => {
+    const calculateTotal = () => {
         let total = basePrice * quantity;
         
         Object.values(additionals).forEach(item => {
@@ -28,11 +23,11 @@ const FormProduto = ({ productData }) => {
         });
 
         return total.toFixed(2);
-    }, [basePrice, quantity, additionals]);
+    };
 
     useEffect(() => {
         setTotalPrice(calculateTotal());
-    }, [calculateTotal]);
+    }, [quantity, additionals]);
 
     const handleQuantityChange = (action) => {
         if (action === 'decrease' && quantity > 1) {
@@ -54,9 +49,6 @@ const FormProduto = ({ productData }) => {
 
     const handlePurchase = () => {
         const orderSummary = {
-            id: productData.id || Date.now(), // Ensure unique ID
-            title: productData.title,
-            image: productData.image,
             baseService: {
                 quantity,
                 pricePerUnit: basePrice,
@@ -70,15 +62,10 @@ const FormProduto = ({ productData }) => {
                     pricePerUnit: item.price,
                     total: item.price * item.quantity
                 })),
-            totalPrice: parseFloat(totalPrice),
-            price: parseFloat(totalPrice) // Required for cart functionality
+            totalPrice: parseFloat(totalPrice)
         };
-        
-        // Add to cart using Redux
-        dispatch(addToCart(orderSummary));
-        
-        // Navigate to cart page
-        navigate('/cart');
+        console.log('Order Summary:', orderSummary);
+        // Here you would typically send this to your backend
     };
 
     return (

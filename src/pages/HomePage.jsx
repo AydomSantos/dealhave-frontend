@@ -20,7 +20,7 @@ const HomePage = () => {
                 <Cards/>
                 <Cards/>
                 <Cards/>
-                <Cards/>
+                
             </div>
         </section>
         <section className="section">
@@ -34,7 +34,6 @@ const HomePage = () => {
                 <Cards/>
                 <Cards/>
                 <Cards/>
-                <Cards/>
             </div>
         </section>
         <section className="section">
@@ -44,7 +43,6 @@ const HomePage = () => {
 
             </h2>
             <div className="section--container--card">
-                <Cards/>
                 <Cards/>
                 <Cards/>
                 <Cards/>

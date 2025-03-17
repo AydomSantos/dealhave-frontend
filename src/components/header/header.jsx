@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../../store/slices/userSlice';
 import logo from "./img/Logo.png";
-import CartIcon from "./CartIcon";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -36,7 +35,6 @@ const Header = () => {
         <Link to="/avaliacoes" className="nav__link">
           Avaliações
         </Link>
-        <CartIcon />
       </nav>
 
       <div className="buttons_container">
